@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Crie um Novo Contato" icon-name="action:new_contact">
+        <div class="slds-m-around_medium">
+            <lightning-record-edit-form object-api-name={contactObject} onsuccess={handleContactCreated}
+                onerror={handleError}>
+                <lightning-messages></lightning-messages>
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_1-of-1">
+                        <lightning-input-field field-name={CPF__cField} onchange={handleInputMask} format="###.###.###-##"></lightning-input-field>                        
+                    </div>
+                </div>
+                
+                <div class="slds-grid slds-grid_vertical-align-center slds-grid_align-end">
+                    <lightning-button label="Limpar" onclick={handleReset}
+                        class="slds-m-right_xx-small"></lightning-button>
+                    <lightning-button label="Criar Lead" type="submit" variant="brand"
+                        class="slds-m-right_xx-small"></lightning-button>
+                </div>
+            
+            </lightning-record-edit-form>
+        </div>
+    </lightning-card>
+</template>
